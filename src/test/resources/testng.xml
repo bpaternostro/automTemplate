@@ -1,29 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Portal.Login">
+<suite name="web.DemoKendo">
 
-    <parameter name="selenium.url" value="https://everislabarstorage01.z15.web.core.windows.net/portal/home" />
+    <parameter name="selenium.url" value="http://commercialtoolsti.tenaris.net/CommercialTools/" />
 
-    <test name="Login" preserve-order="true">
-        <parameter name="selenium.driver" value="chromedriver.exe" />
-        <parameter name="dataProvider" value="login_dataProvider.xlsx" />
+    <test name="Demo" preserve-order="true">
+        <parameter name="selenium.driver" value="IEDriverServer.exe" />
+        <parameter name="dataProvider" value="kendo.xlsx" />
         <parameter name="sheet" value="test1" />
         <classes>
-            <class name="Portal.Login">
+            <class name="web.DemoKendo">
                 <methods>
-                    <include name="validLogin" />
-                </methods>
-            </class>
-        </classes>
-    </test>
-
-    <test name="LoginFailed" preserve-order="true">
-        <parameter name="selenium.driver" value="geckodriver.exe" />
-        <parameter name="dataProvider" value="login_dataProvider.xlsx" />
-        <parameter name="sheet" value="test2" />
-        <classes>
-            <class name="Portal.Login">
-                <methods>
-                    <include name="invalidLogin" />
+                    <include name="kendoTest" />
                 </methods>
             </class>
         </classes>
